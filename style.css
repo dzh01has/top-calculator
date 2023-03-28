@@ -1,44 +1,46 @@
 body
 {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    padding-top: 330px;
 }
 
 .bigContainer
 {
     outline: solid 1px pink;
-    height: 600px;
-    width: 600px;
     overflow: auto;
     display: flex;
     justify-content: center;
+    height: 350px;
+    width: 300px;
 }
 
 .numberPadContainer
 {
     outline: solid 1px blue;
-    height: 300px;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     flex-basis: 150px;
     gap: 10px;
     padding: 10px;
+    padding-top: 20px;
+    height: 300px;
 }
 
 .numberButtons
 {
+    outline: solid 1px yellow;
     width: 40px;
     height: 40px;
-    outline: solid 1px yellow;
 }
 
 .result
 {
     outline: solid 1px purple;
-    width: 150px;
     text-align: center;
     padding-top: 10px;
+    width: 150px;
 }
 
 .operators
@@ -48,6 +50,7 @@ body
     flex-direction: column;
     justify-content: space-between;
     padding: 10px;
+    padding-top: 20px;
     height: 300px;
 }
 
