@@ -2,6 +2,7 @@ let numberA = "";
 let numberB = "";
 let operator = "";
 
+
 function calculate(numberA, operator, numberB)
 {
     switch (operator)
@@ -34,5 +35,3 @@ function calculate(numberA, operator, numberB)
         console.log("Wrong input!");    
     };
 };
-
-console.log(calculate(10, "+", 2));
