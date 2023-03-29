@@ -5,27 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js" defer></script>
     <script src="script.js" defer></script>
     <title>Calculator</title>
 </head>
 <body>
     <div class="bigContainer">
         <div class="numberPadContainer">
-                <div class="result">9 + 10 = 21</div>
-                <button class="numberButtons">1</button>
-                <button class="numberButtons">2</button>
-                <button class="numberButtons">3</button>
-                <button class="numberButtons">4</button>
-                <button class="numberButtons">5</button>
-                <button class="numberButtons">6</button>
-                <button class="numberButtons">7</button>
-                <button class="numberButtons">8</button>
-                <button class="numberButtons">9</button>
-                <button class="numberButtons">0</button>
+                <div class="result" id="resultPanel"></div>
+                <button class="numberButtons" id="numberOne">1</button>
+                <button class="numberButtons" id="numberTwo">2</button>
+                <button class="numberButtons" id="numberThree">3</button>
+                <button class="numberButtons" id="numberFour">4</button>
+                <button class="numberButtons" id="numberFive">5</button>
+                <button class="numberButtons" id="numberSix">6</button>
+                <button class="numberButtons" id="numberSeven">7</button>
+                <button class="numberButtons" id="numberEight">8</button>
+                <button class="numberButtons" id="numberNine">9</button>
+                <button class="numberButtons" id="numberZero">0</button>
         </div>
         <div class="operators">
-            <button class="operatorButtons" id="clear">C</button>
-            <button class="operatorButtons" id="clear">AC</button>
+            <button class="extraButtons" id="clear">C</button>
+            <button class="extraButtons" id="allClear">AC</button>
             <button class="operatorButtons" id="divide">/</button>
             <button class="operatorButtons" id="multiply">x</button>
             <button class="operatorButtons" id="substract">-</button>
