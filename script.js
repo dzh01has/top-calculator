@@ -219,7 +219,7 @@ operatorEqual.addEventListener("click", function()
         operatorClicked = false;
         equalClicked = false;
     }
-    else
+    else if(numberB != "")
     {
         calculate();
         equalClicked = true;
