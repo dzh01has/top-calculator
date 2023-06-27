@@ -22,8 +22,10 @@ const operatorSubstract = document.getElementById("substract");
 const operatorAdd = document.getElementById("add");
 const operatorEqual = document.getElementById("equal");
 const allClear = document.getElementById("allClear");
+//const clear = document.getElementById("clear");
 let operatorClicked = false;
 let equalClicked = false;
+let tempResult = "";
 
 
 function calculate()
@@ -68,11 +70,15 @@ buttonOne.addEventListener("click", function()
     if (operatorClicked == false)
     {
         numberA += 1;
+        resultPanel.textContent += "1";
     }
     else if (operatorClicked == true)
     {
         numberB += 1;
+        resultPanel.textContent += "1";
     }
+
+
 });
 
 buttonTwo.addEventListener("click", function()
@@ -80,10 +86,12 @@ buttonTwo.addEventListener("click", function()
     if (operatorClicked == false)
     {
         numberA += 2;
+        resultPanel.textContent += "2";
     }
     else if (operatorClicked == true)
     {
         numberB += 2;
+        resultPanel.textContent += "2";
     }
 });
 
@@ -92,10 +100,12 @@ buttonThree.addEventListener("click", function()
     if (operatorClicked == false)
     {
         numberA += 3;
+        resultPanel.textContent += "3";
     }
     else if (operatorClicked == true)
     {
         numberB += 3;
+        resultPanel.textContent += "3";
     }
 });
 
@@ -104,10 +114,12 @@ buttonFour.addEventListener("click", function()
     if (operatorClicked == false)
     {
         numberA += 4;
+        resultPanel.textContent += "4";
     }
     else if (operatorClicked == true)
     {
         numberB += 4;
+        resultPanel.textContent += "4";
     }
 });
 
@@ -116,10 +128,12 @@ buttonFive.addEventListener("click", function()
     if (operatorClicked == false)
     {
         numberA += 5;
+        resultPanel.textContent += "5";
     }
     else if (operatorClicked == true)
     {
         numberB += 5;
+        resultPanel.textContent += "5";
     }
 });
 
@@ -128,10 +142,12 @@ buttonSix.addEventListener("click", function()
     if (operatorClicked == false)
     {
         numberA += 6;
+        resultPanel.textContent += "6";
     }
     else if (operatorClicked == true)
     {
         numberB += 6;
+        resultPanel.textContent += "6";
     }
 });
 
@@ -140,10 +156,12 @@ buttonSeven.addEventListener("click", function()
     if (operatorClicked == false)
     {
         numberA += 7;
+        resultPanel.textContent += "7";
     }
     else if (operatorClicked == true)
     {
         numberB += 7;
+        resultPanel.textContent += "7";
     }
 });
 
@@ -152,10 +170,12 @@ buttonEight.addEventListener("click", function()
     if (operatorClicked == false)
     {
         numberA += 8;
+        resultPanel.textContent += "8";
     }
     else if (operatorClicked == true)
     {
         numberB += 8;
+        resultPanel.textContent += "8";
     }
 });
 
@@ -164,10 +184,12 @@ buttonNine.addEventListener("click", function()
     if (operatorClicked == false)
     {
         numberA += 9;
+        resultPanel.textContent += "9";
     }
     else if (operatorClicked == true)
     {
         numberB += 9;
+        resultPanel.textContent += "9";
     }
 });
 
@@ -176,42 +198,125 @@ buttonZero.addEventListener("click", function()
     if (operatorClicked == false)
     {
         numberA += 0;
+        resultPanel.textContent += "0";
     }
     else if (operatorClicked == true)
     {
         numberB += 0;
+        resultPanel.textContent += "0";
     }
 });
 
 operatorDivide.addEventListener("click", function()
 {
-    operator = "/";
-    operatorClicked = true;
+    if(resultPanel.textContent.substring(0, resultPanel.textContent.length).endsWith("/") == true)
+    {
+        return;
+    }
+
+    else if(operatorClicked == false)
+    {
+        operator = "/";
+        operatorClicked = true;
+        resultPanel.textContent += "/";
+    }
+    else
+    {
+        calculate();
+        tempResult = result;
+        numberA = tempResult;
+        console.log(numberA);
+        numberB = "";
+        operatorClicked = true;
+        operator = "/";
+        resultPanel.textContent += "/";
+    }
 });
 
 operatorMultiply.addEventListener("click", function()
 {
-    operator = "*";
-    operatorClicked = true;
+    if(resultPanel.textContent.substring(0, resultPanel.textContent.length).endsWith("*") == true)
+    {
+        return;
+    }
+
+    else if(operatorClicked == false)
+    {
+        operator = "*";
+        operatorClicked = true;
+        resultPanel.textContent += "*";
+    }
+    else
+    {
+        calculate();
+        tempResult = result;
+        numberA = tempResult;
+        console.log(numberA);
+        numberB = "";
+        operatorClicked = true;
+        operator = "*";
+        resultPanel.textContent += "*";
+    }
 });
 
 operatorSubstract.addEventListener("click", function()
 {
-    operator = "-";
-    operatorClicked = true;
+    if(resultPanel.textContent.substring(0, resultPanel.textContent.length).endsWith("-") == true)
+    {
+        return;
+    }
+
+    else if(operatorClicked == false)
+    {
+        operator = "-";
+        operatorClicked = true;
+        resultPanel.textContent += "-";
+    }
+    else
+    {
+        calculate();
+        tempResult = result;
+        numberA = tempResult;
+        console.log(numberA);
+        numberB = "";
+        operatorClicked = true;
+        operator = "-";
+        resultPanel.textContent += "-";
+    }
 });
 
 operatorAdd.addEventListener("click", function()
 {
-    operator = "+";
-    operatorClicked = true;
+    if(resultPanel.textContent.substring(0, resultPanel.textContent.length).endsWith("+") == true)
+    {
+        return;
+    }
+
+    else if(operatorClicked == false)
+    {
+        operator = "+";
+        operatorClicked = true;
+        resultPanel.textContent += "+";
+    }
+    else
+    {
+        calculate();
+        tempResult = result;
+        console.log(tempResult);
+        numberA = tempResult;
+        console.log(numberA);
+        numberB = "";
+        operatorClicked = true;
+        operator = "+";
+        resultPanel.textContent += "+";
+    }
 });
 
 operatorEqual.addEventListener("click", function()
 {
-    if(numberB == 0 && operator == '/')
+    if(numberB == "0" && operator == '/')
     {   
-        alert("Crashed the universe!")
+        alert("Crashed the universe!");
         numberA = "";
         numberB = "";
         result = "";
@@ -219,10 +324,43 @@ operatorEqual.addEventListener("click", function()
         operatorClicked = false;
         equalClicked = false;
     }
-    else if(numberB != "")
+    /*else if(resultPanel.textContent.endsWith("+") == true || resultPanel.textContent.endsWith("-") == true 
+         || resultPanel.textContent.endsWith("*") == true || resultPanel.textContent.endsWith("/") == true)
+    {
+        alert("Input ending with an operator isn't allowed");
+        numberA = "";
+        numberB = "";
+        result = "";
+        operator = "";
+        operatorClicked = false;
+        equalClicked = false;
+        stringOperators = false;
+        resultPanel.textContent = "";
+    }*/
+
+    else if (resultPanel.textContent == "+" || resultPanel.textContent == "-" || resultPanel.textContent == "*" || resultPanel.textContent == "/")
+    {
+        alert("You can't calculate with just an operator!");
+        numberA = "";
+        numberB = "";
+        result = "";
+        operator = "";
+        operatorClicked = false;
+        equalClicked = false;
+    }
+
+    else if(numberA != "" && resultPanel.textContent.endsWith("+") == true || resultPanel.textContent.endsWith("-") == true 
+                                           || resultPanel.textContent.endsWith("*") == true || resultPanel.textContent.endsWith("/") == true)
+    {
+        equalClicked = true;
+        resultPanel.textContent = tempResult; 
+    } 
+
+    else if(numberA != "" && numberB != "")
     {
         calculate();
         equalClicked = true;
+        resultPanel.textContent = result;
     }
 });
 
@@ -234,9 +372,19 @@ allClear.addEventListener("click", function()
     operator = "";
     operatorClicked = false;
     equalClicked = false;
+    stringOperators = false;
+    resultPanel.textContent = "";
 });
 
-$(":button").click(function()
+/*clear.addEventListener("click", function()
+{
+
+    resultPanel.textContent = resultPanel.textContent.substring(0, resultPanel.textContent.length -1);
+})*/
+
+
+
+/*$(":button").click(function()
 {   
     if(equalClicked == false)
     {
@@ -246,7 +394,7 @@ $(":button").click(function()
     {
         resultPanel.textContent = result;
     }  
-});
+});*/
 
 
 
