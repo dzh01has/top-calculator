@@ -251,7 +251,7 @@ operatorMultiply.addEventListener("click", function()
     {
         operator = "*";
         operatorClicked = true;
-        resultPanel.textContent += "*";
+        resultPanel.textContent += "x";
     }
     else
     {
@@ -262,7 +262,7 @@ operatorMultiply.addEventListener("click", function()
         numberB = "";
         operatorClicked = true;
         operator = "*";
-        resultPanel.textContent += "*";
+        resultPanel.textContent += "x";
     }
 });
 
