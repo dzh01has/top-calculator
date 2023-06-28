@@ -22,7 +22,6 @@ const operatorSubstract = document.getElementById("substract");
 const operatorAdd = document.getElementById("add");
 const operatorEqual = document.getElementById("equal");
 const allClear = document.getElementById("allClear");
-//const clear = document.getElementById("clear");
 let operatorClicked = false;
 let equalClicked = false;
 let tempResult = "";
@@ -63,7 +62,7 @@ function calculate()
 };
 
 
-/** INPUT BLOCK */
+//NUMBER INPUT BLOCK 
 
 buttonOne.addEventListener("click", function()
 {
@@ -207,6 +206,8 @@ buttonZero.addEventListener("click", function()
     }
 });
 
+
+//OPEERATOR INPUT BLOCK
 operatorDivide.addEventListener("click", function()
 {
     if(resultPanel.textContent.substring(0, resultPanel.textContent.length).endsWith("/") == true || 
@@ -336,21 +337,9 @@ operatorEqual.addEventListener("click", function()
         operatorClicked = false;
         equalClicked = false;
     }
-    /*else if(resultPanel.textContent.endsWith("+") == true || resultPanel.textContent.endsWith("-") == true 
-         || resultPanel.textContent.endsWith("*") == true || resultPanel.textContent.endsWith("/") == true)
-    {
-        alert("Input ending with an operator isn't allowed");
-        numberA = "";
-        numberB = "";
-        result = "";
-        operator = "";
-        operatorClicked = false;
-        equalClicked = false;
-        stringOperators = false;
-        resultPanel.textContent = "";
-    }*/
 
-    else if (resultPanel.textContent == "+" || resultPanel.textContent == "-" || resultPanel.textContent == "*" || resultPanel.textContent == "/")
+    else if (resultPanel.textContent == "+" || resultPanel.textContent == "-" || 
+             resultPanel.textContent == "*" || resultPanel.textContent == "/")
     {
         alert("You can't calculate with just an operator!");
         numberA = "";
@@ -362,7 +351,7 @@ operatorEqual.addEventListener("click", function()
     }
 
     else if(numberA != "" && resultPanel.textContent.endsWith("+") == true || resultPanel.textContent.endsWith("-") == true 
-                                           || resultPanel.textContent.endsWith("*") == true || resultPanel.textContent.endsWith("/") == true)
+                          || resultPanel.textContent.endsWith("*") == true || resultPanel.textContent.endsWith("/") == true)
     {
         equalClicked = true;
         resultPanel.textContent = tempResult; 
@@ -387,26 +376,6 @@ allClear.addEventListener("click", function()
     stringOperators = false;
     resultPanel.textContent = "";
 });
-
-/*clear.addEventListener("click", function()
-{
-
-    resultPanel.textContent = resultPanel.textContent.substring(0, resultPanel.textContent.length -1);
-})*/
-
-
-
-/*$(":button").click(function()
-{   
-    if(equalClicked == false)
-    {
-        resultPanel.textContent = numberA + operator + numberB;
-    }
-    else if(equalClicked == true)
-    {
-        resultPanel.textContent = result;
-    }  
-});*/
 
 
 
