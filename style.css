@@ -3,21 +3,45 @@ body
     display: flex;
     justify-content: space-around;
     padding-top: 330px;
+    background-image: url("./backgroundImage/testing.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100vw;
+    font-family: Frutiger;
+    filter: drop-shadow(0 0 0.75rem #063d7a);
+}
+
+@font-face
+{
+    font-family: DSEG14Classic-Regular;
+    src: url("./font/DSEG14Classic-Regular.ttf");
+    src: url("./font/DSEG14Classic-Regular.woff");
+    src: url("./font/DSEG14Classic-Regular.woff2");
+}
+
+button
+{
+    border: none;
+    border-radius: 5px;
 }
 
 .bigContainer
 {
-    outline: solid 1px pink;
     overflow: auto;
     display: flex;
     justify-content: center;
     height: 350px;
     width: 300px;
+    background-image: linear-gradient(to top, #0f5cb3, #2167bb, #2f71c2, #3c7cc9, 
+    #4987d0, #4885cf, #4784cf, #4682ce, #3974c5, #2c66bc, #2159b3, #164ba9);
+    border-radius: 10px;
+    outline-style: solid;
+    outline-width: 3px;
+    outline-color: #67a4d4;
 }
 
 .numberPadContainer
 {
-    outline: solid 1px blue;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -30,22 +54,32 @@ body
 
 .numberButtons
 {
-    outline: solid 1px yellow;
     width: 40px;
     height: 40px;
+    background-image: linear-gradient(to top, #d2e4f2, #bdd5e9, #a8c6e1, #94b6d8, #81a7d0, 
+    #87a8d1, #8da8d2, #93a9d3, #afbbde, #c8cde9, #e0e1f4, #f6f5ff);
+    outline-color: #4f74a7;
+    font-family: DSEG14Classic-Regular;
+    font-weight: bold;
+    font-size: 17px;
+    color:  #3c6bac;
 }
 
 .result
 {
-    outline: solid 1px purple;
     text-align: right;
     padding-top: 10px;
     width: 150px;
+    height: 30px;
+    background-color: #417ccc;
+    font-family: DSEG14Classic-Regular;
+    color: #eef3fd;
+    border-radius: 5px;
+    outline: solid 1px #032d70;
 }
 
 .operators
 {
-    outline: solid 1px red;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -54,8 +88,18 @@ body
     height: 300px;
 }
 
-.operatorButtons
+.operatorButtons, .extraButtons
 {
     width: 40px;
     height: 40px;
+    background-image: linear-gradient(to top, #d2e4f2, #bdd5e9, #a8c6e1, #94b6d8, #81a7d0, 
+    #87a8d1, #8da8d2, #93a9d3, #afbbde, #c8cde9, #e0e1f4, #f6f5ff);
+    outline-style: solid;
+    outline-width: 3px;
+    outline-color: #70d337;
+    color: #3c6bac;
+    font-family: DSEG14Classic-Regular;
+    font-weight: bold;
+    font-size: 17px;
+    filter: drop-shadow(0 0 0.2rem #c2fd9b);
 }
