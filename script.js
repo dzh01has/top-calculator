@@ -209,7 +209,10 @@ buttonZero.addEventListener("click", function()
 
 operatorDivide.addEventListener("click", function()
 {
-    if(resultPanel.textContent.substring(0, resultPanel.textContent.length).endsWith("/") == true)
+    if(resultPanel.textContent.substring(0, resultPanel.textContent.length).endsWith("/") == true || 
+       resultPanel.textContent.substring(0, resultPanel.textContent.length).endsWith("*") == true ||
+       resultPanel.textContent.substring(0, resultPanel.textContent.length).endsWith("+") == true ||
+       resultPanel.textContent.substring(0, resultPanel.textContent.length).endsWith("-") == true)
     {
         return;
     }
@@ -235,7 +238,10 @@ operatorDivide.addEventListener("click", function()
 
 operatorMultiply.addEventListener("click", function()
 {
-    if(resultPanel.textContent.substring(0, resultPanel.textContent.length).endsWith("*") == true)
+    if(resultPanel.textContent.substring(0, resultPanel.textContent.length).endsWith("/") == true || 
+       resultPanel.textContent.substring(0, resultPanel.textContent.length).endsWith("*") == true ||
+       resultPanel.textContent.substring(0, resultPanel.textContent.length).endsWith("+") == true ||
+       resultPanel.textContent.substring(0, resultPanel.textContent.length).endsWith("-") == true)
     {
         return;
     }
@@ -261,7 +267,10 @@ operatorMultiply.addEventListener("click", function()
 
 operatorSubstract.addEventListener("click", function()
 {
-    if(resultPanel.textContent.substring(0, resultPanel.textContent.length).endsWith("-") == true)
+    if(resultPanel.textContent.substring(0, resultPanel.textContent.length).endsWith("/") == true || 
+       resultPanel.textContent.substring(0, resultPanel.textContent.length).endsWith("*") == true ||
+       resultPanel.textContent.substring(0, resultPanel.textContent.length).endsWith("+") == true ||
+       resultPanel.textContent.substring(0, resultPanel.textContent.length).endsWith("-") == true)
     {
         return;
     }
@@ -287,7 +296,10 @@ operatorSubstract.addEventListener("click", function()
 
 operatorAdd.addEventListener("click", function()
 {
-    if(resultPanel.textContent.substring(0, resultPanel.textContent.length).endsWith("+") == true)
+    if(resultPanel.textContent.substring(0, resultPanel.textContent.length).endsWith("/") == true || 
+       resultPanel.textContent.substring(0, resultPanel.textContent.length).endsWith("*") == true ||
+       resultPanel.textContent.substring(0, resultPanel.textContent.length).endsWith("+") == true ||
+       resultPanel.textContent.substring(0, resultPanel.textContent.length).endsWith("-") == true)
     {
         return;
     }
