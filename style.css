@@ -153,3 +153,36 @@ button
     box-shadow: 0 3px 6px rgba(194,253,155), 0 3px 6px rgba(194,253,155);
 }
 
+/* For mobile */
+
+@media screen and (max-width: 414px)
+{
+    .bigContainer
+    {
+       height: 390px;
+       width: 305px; 
+    }
+
+    .numberPadContainer
+    {
+        height: 300px;
+    }
+
+    .numberButtons, .operatorButtons, .extraButtons, .basicOperator
+    {
+        height: 40px;
+        width: 40px;
+    }
+    
+    .result
+    {
+        height: 30px;
+        width: 150px;
+    }
+
+    .operators
+    {
+        height: 320px;
+    }
+}
+
