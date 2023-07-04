@@ -68,9 +68,10 @@ body
     width: 300px;
     height: 60px;
     background-color: #417ccc;
-    font-family: DSEG14Classic-Regular;
+    /*font-family: DSEG14Classic-Regular;*/
+    font-family: Frutiger;
     color: #eef3fd;
-    font-size: 32px;
+    font-size: 36px;
     border-radius: 5px;
     outline: solid 1px #032d70;
     overflow: hidden;
@@ -101,9 +102,10 @@ button
     background-image: linear-gradient(to top, #d2e4f2, #bdd5e9, #a8c6e1, #94b6d8, #81a7d0, 
     #87a8d1, #8da8d2, #93a9d3, #afbbde, #c8cde9, #e0e1f4, #f6f5ff);
     outline-color: #4f74a7;
-    font-family: DSEG14Classic-Regular;
+    /*font-family: DSEG14Classic-Regular;*/
+    font-family: Frutiger;
     font-weight: bold;
-    font-size: 17px;
+    font-size: 22px;
     color:  #3c6bac;
 }
 
@@ -117,9 +119,10 @@ button
     outline-width: 3px;
     outline-color: #70d337;
     color: #3c6bac;
-    font-family: DSEG14Classic-Regular;
+    /*font-family: DSEG14Classic-Regular;*/
+    font-family: Frutiger;
     font-weight: bold;
-    font-size: 17px;
+    font-size: 22px;
 }
 
 .numberButtons:hover 
