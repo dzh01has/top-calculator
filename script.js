@@ -2,11 +2,12 @@ let numberA = "";
 let numberB = "";
 let operator = "";
 let result = "";
+const audioFile = document.querySelector("#audiofile");
 const resultPanel = document.querySelector("#resultPanel");
-const numberButtons = document.getElementsByClassName("numberButtons");
+//const numberButtons = document.getElementsByClassName("numberButtons");
 const operatorButtons = document.getElementsByClassName("operatorButtons");
 const extraButtons = document.getElementsByClassName("extraButtons");
-const buttonOne = document.getElementById("numberOne");
+/*const buttonOne = document.getElementById("numberOne");
 const buttonTwo = document.getElementById("numberTwo");
 const buttonThree = document.getElementById("numberThree");
 const buttonFour = document.getElementById("numberFour");
@@ -15,7 +16,7 @@ const buttonSix = document.getElementById("numberSix");
 const buttonSeven = document.getElementById("numberSeven");
 const buttonEight = document.getElementById("numberEight");
 const buttonNine = document.getElementById("numberNine");
-const buttonZero = document.getElementById("numberZero");
+const buttonZero = document.getElementById("numberZero");*/
 const operatorDivide = document.getElementById("divide");
 const operatorMultiply = document.getElementById("multiply");
 const operatorSubstract = document.getElementById("substract");
@@ -61,150 +62,28 @@ function calculate()
         };
 };
 
+function playAudio()
+{
+    audioFile.play();
+}
 
 //NUMBER INPUT BLOCK 
 
-buttonOne.addEventListener("click", function()
+document.querySelectorAll('.numberButtons').forEach(function(btn) 
 {
-    if (operatorClicked == false)
+    btn.addEventListener('click', function() 
     {
-        numberA += 1;
-        resultPanel.textContent += "1";
-    }
-    else if (operatorClicked == true)
-    {
-        numberB += 1;
-        resultPanel.textContent += "1";
-    }
-
-
-});
-
-buttonTwo.addEventListener("click", function()
-{
-    if (operatorClicked == false)
-    {
-        numberA += 2;
-        resultPanel.textContent += "2";
-    }
-    else if (operatorClicked == true)
-    {
-        numberB += 2;
-        resultPanel.textContent += "2";
-    }
-});
-
-buttonThree.addEventListener("click", function()
-{
-    if (operatorClicked == false)
-    {
-        numberA += 3;
-        resultPanel.textContent += "3";
-    }
-    else if (operatorClicked == true)
-    {
-        numberB += 3;
-        resultPanel.textContent += "3";
-    }
-});
-
-buttonFour.addEventListener("click", function()
-{
-    if (operatorClicked == false)
-    {
-        numberA += 4;
-        resultPanel.textContent += "4";
-    }
-    else if (operatorClicked == true)
-    {
-        numberB += 4;
-        resultPanel.textContent += "4";
-    }
-});
-
-buttonFive.addEventListener("click", function()
-{
-    if (operatorClicked == false)
-    {
-        numberA += 5;
-        resultPanel.textContent += "5";
-    }
-    else if (operatorClicked == true)
-    {
-        numberB += 5;
-        resultPanel.textContent += "5";
-    }
-});
-
-buttonSix.addEventListener("click", function()
-{
-    if (operatorClicked == false)
-    {
-        numberA += 6;
-        resultPanel.textContent += "6";
-    }
-    else if (operatorClicked == true)
-    {
-        numberB += 6;
-        resultPanel.textContent += "6";
-    }
-});
-
-buttonSeven.addEventListener("click", function()
-{
-    if (operatorClicked == false)
-    {
-        numberA += 7;
-        resultPanel.textContent += "7";
-    }
-    else if (operatorClicked == true)
-    {
-        numberB += 7;
-        resultPanel.textContent += "7";
-    }
-});
-
-buttonEight.addEventListener("click", function()
-{
-    if (operatorClicked == false)
-    {
-        numberA += 8;
-        resultPanel.textContent += "8";
-    }
-    else if (operatorClicked == true)
-    {
-        numberB += 8;
-        resultPanel.textContent += "8";
-    }
-});
-
-buttonNine.addEventListener("click", function()
-{
-    if (operatorClicked == false)
-    {
-        numberA += 9;
-        resultPanel.textContent += "9";
-    }
-    else if (operatorClicked == true)
-    {
-        numberB += 9;
-        resultPanel.textContent += "9";
-    }
-});
-
-buttonZero.addEventListener("click", function()
-{
-    if (operatorClicked == false)
-    {
-        numberA += 0;
-        resultPanel.textContent += "0";
-    }
-    else if (operatorClicked == true)
-    {
-        numberB += 0;
-        resultPanel.textContent += "0";
-    }
-});
+      const value = btn.textContent.trim();
+  
+      if (operatorClicked == false) {
+        numberA += value;
+        resultPanel.textContent += value
+      } else if (operatorClicked == true) {
+        numberB += value;
+        resultPanel.textContent += value;
+      }
+    })
+  });
 
 
 //OPEERATOR INPUT BLOCK
