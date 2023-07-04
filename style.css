@@ -76,6 +76,8 @@ button
     color: #eef3fd;
     border-radius: 5px;
     outline: solid 1px #032d70;
+    overflow: hidden;
+    direction: rtl;
 }
 
 .operators
