@@ -4,19 +4,8 @@ let operator = "";
 let result = "";
 const audioFile = document.querySelector("#audiofile");
 const resultPanel = document.querySelector("#resultPanel");
-//const numberButtons = document.getElementsByClassName("numberButtons");
 const operatorButtons = document.getElementsByClassName("operatorButtons");
 const extraButtons = document.getElementsByClassName("extraButtons");
-/*const buttonOne = document.getElementById("numberOne");
-const buttonTwo = document.getElementById("numberTwo");
-const buttonThree = document.getElementById("numberThree");
-const buttonFour = document.getElementById("numberFour");
-const buttonFive = document.getElementById("numberFive");
-const buttonSix = document.getElementById("numberSix");
-const buttonSeven = document.getElementById("numberSeven");
-const buttonEight = document.getElementById("numberEight");
-const buttonNine = document.getElementById("numberNine");
-const buttonZero = document.getElementById("numberZero");*/
 const operatorDivide = document.getElementById("divide");
 const operatorMultiply = document.getElementById("multiply");
 const operatorSubstract = document.getElementById("substract");
@@ -45,7 +34,7 @@ function calculate()
         }
         break;
 
-        case "*":
+        case "x":
             {
                 result = numberA * numberB;
             }
@@ -67,7 +56,7 @@ function playAudio()
     audioFile.play();
 }
 
-//NUMBER INPUT BLOCK 
+//NUMBER INPUT
 
 document.querySelectorAll('.numberButtons').forEach(function(btn) 
 {
@@ -85,11 +74,15 @@ document.querySelectorAll('.numberButtons').forEach(function(btn)
     })
   });
 
+ //OPERATOR INPUT 
 
-//OPEERATOR INPUT BLOCK
-operatorDivide.addEventListener("click", function()
+document.querySelectorAll('.basicOperator').forEach(function(btn) 
 {
-    if(resultPanel.textContent.substring(0, resultPanel.textContent.length).endsWith("/") == true || 
+    btn.addEventListener('click', function() 
+    {
+      const operatorValue = btn.getAttribute('data-operator').trim();
+  
+      if(resultPanel.textContent.substring(0, resultPanel.textContent.length).endsWith("/") == true || 
        resultPanel.textContent.substring(0, resultPanel.textContent.length).endsWith("*") == true ||
        resultPanel.textContent.substring(0, resultPanel.textContent.length).endsWith("+") == true ||
        resultPanel.textContent.substring(0, resultPanel.textContent.length).endsWith("-") == true)
@@ -99,96 +92,9 @@ operatorDivide.addEventListener("click", function()
 
     else if(operatorClicked == false)
     {
-        operator = "/";
+        operator = operatorValue;
         operatorClicked = true;
-        resultPanel.textContent += "/";
-    }
-    else
-    {
-        calculate();
-        tempResult = result;
-        numberA = tempResult;
-        console.log(numberA);
-        numberB = "";
-        operatorClicked = true;
-        operator = "/";
-        resultPanel.textContent += "/";
-    }
-});
-
-operatorMultiply.addEventListener("click", function()
-{
-    if(resultPanel.textContent.substring(0, resultPanel.textContent.length).endsWith("/") == true || 
-       resultPanel.textContent.substring(0, resultPanel.textContent.length).endsWith("*") == true ||
-       resultPanel.textContent.substring(0, resultPanel.textContent.length).endsWith("+") == true ||
-       resultPanel.textContent.substring(0, resultPanel.textContent.length).endsWith("-") == true)
-    {
-        return;
-    }
-
-    else if(operatorClicked == false)
-    {
-        operator = "*";
-        operatorClicked = true;
-        resultPanel.textContent += "x";
-    }
-    else
-    {
-        calculate();
-        tempResult = result;
-        numberA = tempResult;
-        console.log(numberA);
-        numberB = "";
-        operatorClicked = true;
-        operator = "*";
-        resultPanel.textContent += "x";
-    }
-});
-
-operatorSubstract.addEventListener("click", function()
-{
-    if(resultPanel.textContent.substring(0, resultPanel.textContent.length).endsWith("/") == true || 
-       resultPanel.textContent.substring(0, resultPanel.textContent.length).endsWith("*") == true ||
-       resultPanel.textContent.substring(0, resultPanel.textContent.length).endsWith("+") == true ||
-       resultPanel.textContent.substring(0, resultPanel.textContent.length).endsWith("-") == true)
-    {
-        return;
-    }
-
-    else if(operatorClicked == false)
-    {
-        operator = "-";
-        operatorClicked = true;
-        resultPanel.textContent += "-";
-    }
-    else
-    {
-        calculate();
-        tempResult = result;
-        numberA = tempResult;
-        console.log(numberA);
-        numberB = "";
-        operatorClicked = true;
-        operator = "-";
-        resultPanel.textContent += "-";
-    }
-});
-
-operatorAdd.addEventListener("click", function()
-{
-    if(resultPanel.textContent.substring(0, resultPanel.textContent.length).endsWith("/") == true || 
-       resultPanel.textContent.substring(0, resultPanel.textContent.length).endsWith("*") == true ||
-       resultPanel.textContent.substring(0, resultPanel.textContent.length).endsWith("+") == true ||
-       resultPanel.textContent.substring(0, resultPanel.textContent.length).endsWith("-") == true)
-    {
-        return;
-    }
-
-    else if(operatorClicked == false)
-    {
-        operator = "+";
-        operatorClicked = true;
-        resultPanel.textContent += "+";
+        resultPanel.textContent += operatorValue;
     }
     else
     {
@@ -197,10 +103,13 @@ operatorAdd.addEventListener("click", function()
         numberA = tempResult;
         numberB = "";
         operatorClicked = true;
-        operator = "+";
-        resultPanel.textContent += "+";
+        operator = operatorValue;
+        resultPanel.textContent += operatorValue;
     }
-});
+    })
+  });
+
+//Equal
 
 operatorEqual.addEventListener("click", function()
 {
@@ -251,6 +160,8 @@ operatorEqual.addEventListener("click", function()
         resultPanel.textContent = Math.round(result*100)/100;
     }
 });
+
+//AC buttons
 
 allClear.addEventListener("click", function()
 {
