@@ -315,9 +315,7 @@ operatorAdd.addEventListener("click", function()
     {
         calculate();
         tempResult = result;
-        console.log(tempResult);
         numberA = tempResult;
-        console.log(numberA);
         numberB = "";
         operatorClicked = true;
         operator = "+";
@@ -354,14 +352,24 @@ operatorEqual.addEventListener("click", function()
                           || resultPanel.textContent.endsWith("*") == true || resultPanel.textContent.endsWith("/") == true)
     {
         equalClicked = true;
-        resultPanel.textContent = tempResult; 
+        if(result.toString().length > 10)
+        {
+        resultPanel.textContent = (Math.round(tempResult*100)/100).toExponential(3);
+        }
+        else
+        resultPanel.textContent = Math.round(tempResult*100)/100;
     } 
 
     else if(numberA != "" && numberB != "")
     {
         calculate();
         equalClicked = true;
-        resultPanel.textContent = result;
+        if(result.toString().length > 10)
+        {
+        resultPanel.textContent = (Math.round(result*100)/100).toExponential(3);
+        }
+        else
+        resultPanel.textContent = Math.round(result*100)/100;
     }
 });
 
