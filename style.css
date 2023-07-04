@@ -37,7 +37,7 @@ button
     border-radius: 10px;
     outline-style: solid;
     outline-width: 3px;
-    outline-color: #67a4d4;
+    outline-color: #67a5d4;
 }
 
 .numberPadContainer
@@ -69,6 +69,8 @@ button
 {
     text-align: right;
     padding-top: 10px;
+    padding-right: 5px;
+    padding-left: 5px;
     width: 150px;
     height: 30px;
     background-color: #417ccc;
@@ -77,7 +79,6 @@ button
     border-radius: 5px;
     outline: solid 1px #032d70;
     overflow: hidden;
-    direction: rtl;
 }
 
 .operators
