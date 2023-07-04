@@ -107,7 +107,7 @@ button
     color:  #3c6bac;
 }
 
-.operatorButtons, .extraButtons
+.operatorButtons, .extraButtons, .basicOperator
 {
     width: 70px;
     height: 70px;
@@ -136,13 +136,13 @@ button
     box-shadow: 0 3px 6px #67a5d4, 0 3px 6px #67a5d4;
   }
 
-.operatorButtons:hover, .extraButtons:hover 
+.operatorButtons:hover, .extraButtons:hover, .basicOperator:hover 
 {
     background-color: #70d337;
     box-shadow: 0 10px 20px rgba(194,253,155), 0 6px 6px rgba(194,253,155);
 }
 
-.operatorButtons:active, .extraButtons:active 
+.operatorButtons:active, .extraButtons:active, .basicOperator:active 
 {
     position: relative;
     top: 1px;
