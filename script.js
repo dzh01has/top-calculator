@@ -2,7 +2,6 @@ let numberA = "";
 let numberB = "";
 let operator = "";
 let result = "";
-const audioFile = document.querySelector("#audiofile");
 const resultPanel = document.querySelector("#resultPanel");
 const operatorButtons = document.getElementsByClassName("operatorButtons");
 const extraButtons = document.getElementsByClassName("extraButtons");
@@ -53,6 +52,11 @@ function calculate()
 
 function playAudio()
 {
+    const audioFile = document.querySelector("#audiofile");  
+
+    audioFile.volume = 0.1;
+    audioFile.pause();
+    audioFile.currentTime = 0;
     audioFile.play();
 }
 
@@ -62,8 +66,8 @@ document.querySelectorAll('.numberButtons').forEach(function(btn)
 {
     btn.addEventListener('click', function() 
     {
+      playAudio();
       const value = btn.textContent.trim();
-  
       if (operatorClicked == false) {
         numberA += value;
         resultPanel.textContent += value
@@ -80,6 +84,7 @@ document.querySelectorAll('.basicOperator').forEach(function(btn)
 {
     btn.addEventListener('click', function() 
     {
+      playAudio();
       const operatorValue = btn.getAttribute('data-operator').trim();
   
       if(resultPanel.textContent.substring(0, resultPanel.textContent.length).endsWith("/") == true || 
@@ -113,6 +118,7 @@ document.querySelectorAll('.basicOperator').forEach(function(btn)
 
 operatorEqual.addEventListener("click", function()
 {
+    playAudio();
     if(numberB == "0" && operator == '/')
     {   
         alert("Crashed the universe!");
@@ -165,6 +171,7 @@ operatorEqual.addEventListener("click", function()
 
 allClear.addEventListener("click", function()
 {
+    playAudio();
     numberA = "";
     numberB = "";
     result = "";
