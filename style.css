@@ -155,7 +155,7 @@ button
 
 /* For mobile */
 
-@media screen and (max-width: 414px)
+@media screen and (max-width: 640px)
 {
     .bigContainer
     {
