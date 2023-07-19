@@ -88,7 +88,7 @@ document.querySelectorAll('.basicOperator').forEach(function(btn)
       const operatorValue = btn.getAttribute('data-operator').trim();
   
       if(resultPanel.textContent.substring(0, resultPanel.textContent.length).endsWith("/") == true || 
-       resultPanel.textContent.substring(0, resultPanel.textContent.length).endsWith("*") == true ||
+       resultPanel.textContent.substring(0, resultPanel.textContent.length).endsWith("x") == true ||
        resultPanel.textContent.substring(0, resultPanel.textContent.length).endsWith("+") == true ||
        resultPanel.textContent.substring(0, resultPanel.textContent.length).endsWith("-") == true)
     {
