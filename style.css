@@ -66,7 +66,7 @@ body
     text-align: right;
     padding: 15px;
     width: 300px;
-    height: 60px;
+    height: 55px;
     background-color: #417ccc;
     /*font-family: DSEG14Classic-Regular;*/
     font-family: Frutiger;
@@ -105,7 +105,7 @@ button
     /*font-family: DSEG14Classic-Regular;*/
     font-family: Frutiger;
     font-weight: bold;
-    font-size: 22px;
+    font-size: 30px;
     color:  #3c6bac;
 }
 
@@ -122,7 +122,7 @@ button
     /*font-family: DSEG14Classic-Regular;*/
     font-family: Frutiger;
     font-weight: bold;
-    font-size: 22px;
+    font-size: 30px;
 }
 
 .numberButtons:hover 
