@@ -29,7 +29,7 @@ body
     overflow: auto;
     display: flex;
     justify-content: center;
-    height: 660px;
+    height: 760px;
     width: 530px;
     background-image: linear-gradient(to top, #0f5cb3, #2167bb, #2f71c2, #3c7cc9, 
     #4987d0, #4885cf, #4784cf, #4682ce, #3974c5, #2c66bc, #2159b3, #164ba9);
